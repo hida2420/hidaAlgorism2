@@ -13,6 +13,12 @@ def ilfn(n): return [il() for i in range(n)]
 def ifn(n): return [i() for j in range(n)]
 def iifn(n): return [ii() for i in range(n)]
 
+#インデックスを保持しながら配列ソート
+def sort_with_index(a, is_rev):
+    indexed_a = [(i, x) for i, x in enumerate(a)]
+    sorted_a = sorted(indexed_a, key=lambda x: x[1], reverse=is_rev)
+    return sorted_a
+
 #引数：累積和を求める配列、N
 #例えば、1~3番目の要素の和を求める場合、C[3]-C[1]で求める
 def CUSUM(A, n):
